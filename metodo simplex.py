@@ -62,7 +62,6 @@ def MostrarVariaveisBasicasENaoBasicas(matriz):
                 iterationOtimo += 1
                 multiplicado = matriz[iterationOtimo][iterationColuna] * matriz[iterationOtimo][tamanhoDaMatriz]
                 if multiplicado == matriz[iterationOtimo][tamanhoDaMatriz] != 0:
-                    print('iterationColuna, tamanhoDaMatriz', iterationColuna, tamanhoDaMatriz)
                     print('O valor ótimo para a variável de número ', iterationColuna, 'é:', multiplicado)
 
 
