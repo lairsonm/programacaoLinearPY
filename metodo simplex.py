@@ -114,7 +114,7 @@ print('Agora você vai inserir os coeficientes da função objetivo')
 #inserção dos coeficientes da função objetivo
 while iterationVariaveis < numeroVariaveis:
     iterationVariaveis += 1
-    item = float(input('Insira o coeficiente'))
+    item = float(input('Insira o coeficiente da função objetivo (um a um)'))
     matriz[0].insert(iterationVariaveis, item)
     tamanhoDaMatriz += 1
     print(matriz)
@@ -129,11 +129,12 @@ while iterationRestricoes <= numeroRestricoes:
 iterationRestricoes = 0
 
 #inserção dos coeficientes das restrições e dos resultados
+print('Agora você vai inserir os coeficientes das restrições')
 while iterationRestricoes < numeroRestricoes:
     iterationRestricoes += 1
     while iterationVariaveis < numeroVariaveis:
         iterationVariaveis += 1
-        item = float(input('Insira o coeficiente'))
+        item = float(input('Insira o coeficiente da restrição (um a um)'))
         novaLinha.append(item)
         print(novaLinha)
     indexDaFalta = iterationVariaveis + iterationRestricoes
@@ -145,7 +146,7 @@ while iterationRestricoes < numeroRestricoes:
         else:
             novaLinha.insert(iterationVariaveis, 0)
 
-    item = float(input('Insira o resultado'))
+    item = float(input('Insira o resultado da restrição'))
     novaLinha.append(item)
 
     matriz.append(novaLinha)
