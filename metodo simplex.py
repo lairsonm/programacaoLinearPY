@@ -51,17 +51,24 @@ def funcaoDeCalculo():
 
 
 def MostrarVariaveisBasicasENaoBasicas(matriz):
-    iterationColuna = 1
+    iterationColuna = 0
     while iterationColuna <= (numeroRestricoes*2):
+        iterationColuna += 1
         coluna = [row[iterationColuna] for row in matriz]
         soma = sum(coluna)
         if soma == 1:
-            print('O valor ótimo para a variável de número ', iterationColuna, 'é:', matriz[iterationColuna][tamanhoDaMatriz])
+            iterationOtimo = 0
+            while iterationOtimo < numeroRestricoes:
+                iterationOtimo += 1
+                multiplicado = matriz[iterationOtimo][iterationColuna] * matriz[iterationOtimo][tamanhoDaMatriz]
+                if multiplicado == matriz[iterationOtimo][tamanhoDaMatriz] != 0:
+                    print('iterationColuna, tamanhoDaMatriz', iterationColuna, tamanhoDaMatriz)
+                    print('O valor ótimo para a variável de número ', iterationColuna, 'é:', multiplicado)
+
+
         else:
             print('A variável de número', iterationColuna, 'é não básica, logo igual a: 0')
-        iterationColuna += 1
 
-         #   matriz[iterationLinha][iterationColuna]
 
 
 def MostrarValorDeZ(matriz):
