@@ -54,7 +54,7 @@ def funcaoDeCalculo():
 def MostrarVariaveisBasicasENaoBasicas(matriz):
     iterationColuna = 0
 
-    while iterationColuna < (numeroRestricoes*2):
+    while iterationColuna < (numeroRestricoes + numeroVariaveis):
         achouValorBasico = False
         iterationColuna += 1
         coluna = [row[iterationColuna] for row in matriz]
