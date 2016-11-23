@@ -20,15 +20,16 @@ def funcaoDeCalculo():
     linhaMenorPositivo = 0
     while iterationDivisor < numeroRestricoes:
         iterationDivisor += 1
-        teste = matriz[iterationDivisor][tamanhoDaMatriz]/matriz[iterationDivisor][indexDivisor]
-        if (teste>0):
-            if menorPositivo == 0:
-                menorPositivo = teste
-                linhaMenorPositivo = iterationDivisor
-            elif teste < menorPositivo:
-                menorPositivo = teste
-                linhaMenorPositivo = iterationDivisor
-
+        if matriz[iterationDivisor][indexDivisor] != 0:
+            teste = matriz[iterationDivisor][tamanhoDaMatriz]/matriz[iterationDivisor][indexDivisor]
+            if teste > 0:
+                if menorPositivo == 0:
+                    menorPositivo = teste
+                    linhaMenorPositivo = iterationDivisor
+                elif teste < menorPositivo:
+                    menorPositivo = teste
+                    linhaMenorPositivo = iterationDivisor
+                    
     print('O menor positivo é', menorPositivo)
     print('A linha do menor positivo é', linhaMenorPositivo)
 
@@ -52,7 +53,9 @@ def funcaoDeCalculo():
 
 def MostrarVariaveisBasicasENaoBasicas(matriz):
     iterationColuna = 0
-    while iterationColuna <= (numeroRestricoes*2):
+
+    while iterationColuna < (numeroRestricoes*2):
+        achouValorBasico = False
         iterationColuna += 1
         coluna = [row[iterationColuna] for row in matriz]
         soma = sum(coluna)
@@ -63,8 +66,9 @@ def MostrarVariaveisBasicasENaoBasicas(matriz):
                 multiplicado = matriz[iterationOtimo][iterationColuna] * matriz[iterationOtimo][tamanhoDaMatriz]
                 if multiplicado == matriz[iterationOtimo][tamanhoDaMatriz] != 0:
                     print('O valor ótimo para a variável de número ', iterationColuna, 'é:', multiplicado)
-
-
+                    achouValorBasico = True
+            if achouValorBasico == False:
+                print('A variável de número', iterationColuna, 'é não básica, logo igual a: 0')
         else:
             print('A variável de número', iterationColuna, 'é não básica, logo igual a: 0')
 
